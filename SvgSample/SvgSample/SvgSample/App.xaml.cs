@@ -13,7 +13,7 @@ namespace SvgSample
         {
             InitializeComponent();
 
-            MainPage = new SvgSample.MainPage();
+            MainPage = new NavigationPage(new SvgPageXaml());
         }
 
         protected override void OnStart()
