@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using SVG.Forms.Plugin.Droid;
 
 namespace SvgSample.Droid
 {
@@ -20,6 +21,8 @@ namespace SvgSample.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            SvgImageRenderer.Init();
+
             LoadApplication(new App());
         }
     }
