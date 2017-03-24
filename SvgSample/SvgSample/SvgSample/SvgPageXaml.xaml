@@ -2,10 +2,30 @@
 <ContentPage x:Class="SvgSample.SvgPageXaml"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SvgSample">
-
-    <Label HorizontalOptions="Center"
-           Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center" />
+             xmlns:local="clr-namespace:SvgSample"
+             xmlns:svg="clr-namespace:SVG.Forms.Plugin.Abstractions;assembly=SVG.Forms.Plugin.Abstractions"
+             Title="SVG via XAML">
+    <ContentPage.BindingContext>
+        <local:SvgPageXamlViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView Padding="8">
+        <StackLayout>
+            <svg:SvgImage HeightRequest="40"
+                          HorizontalOptions="Center"
+                          SvgAssembly="{Binding SvgAssembly}"
+                          SvgPath="{Binding AppStorePath}"
+                          WidthRequest="135" />
+            <svg:SvgImage HeightRequest="100"
+                          HorizontalOptions="Center"
+                          SvgAssembly="{Binding SvgAssembly}"
+                          SvgPath="{Binding CoolMaskPath}"
+                          WidthRequest="100" />
+            <svg:SvgImage HeightRequest="300"
+                          HorizontalOptions="Center"
+                          SvgAssembly="{Binding SvgAssembly}"
+                          SvgPath="{Binding TigerPath}"
+                          WidthRequest="300" />
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
